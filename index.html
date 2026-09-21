@@ -58,6 +58,46 @@
   footer{text-align:center;color:var(--muted);font-size:.82rem;padding:1.5rem 1rem 2.5rem;}
   footer a{color:var(--accent);}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "It says my .heic file is actually a JPEG (or the reverse)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some cameras and apps label an already-JPEG photo with a .HEIC extension, and less commonly the other way around. This page detects the real format from the file's own bytes rather than trusting the extension, which is exactly the case the HEIC to JPG converter 's troubleshooting section points here for. Rename the file to match what it actually is, or feed it to the format-appropriate tool."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "No GPS location shows up, but I know the photo was geotagged",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many phones strip GPS data when a photo is shared through a messaging app or social network, and some camera apps have location tagging turned off by default. If the photo was exported, downloaded, or forwarded rather than opened straight from the camera's original file, check for GPS tags on that original instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "The file has metadata in [some other program], but this page shows none",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This page reads EXIF/TIFF metadata (camera, exposure, GPS, dates) and PNG text chunks. If the other program is showing IPTC fields (captions, keywords, credit lines) or XMP data (common from Adobe software), those live in a different metadata block this page doesn't parse yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which formats carry EXIF data, and which don't?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JPEG, TIFF, PNG (via its eXIf chunk), WebP (via its EXIF chunk), and HEIC/HEIF/AVIF can all carry EXIF metadata, though not every file actually has any. GIF and BMP have no provision for EXIF at all \u2014 this page will still detect and show their dimensions, but there's no camera or GPS data to find."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header>
